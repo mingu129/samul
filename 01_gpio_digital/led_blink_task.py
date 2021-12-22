@@ -2,25 +2,24 @@ import RPi.GPIO as GPIO
 import time
 
 
-LED_PIN1 = 17
-LED_PIN2 = 27
-LED_PIN3 = 4
+LED_PIN1 = 20
+LED_PIN2 = 16
 GPIO.setmode(GPIO.BCM)
 
-li = [LED_PIN1, LED_PIN2, LED_PIN3]
-li1 = ["RED", "YELLOW", "GREEN"]
+li = [LED_PIN1, LED_PIN2]
+li1 = ["RED", "YELLOW"]
 
 
-for t in range(3):
+for t in range(2):
     GPIO.setup(li[t], GPIO.OUT)
 
-for j in range(31001203):
-    for i in range(3):
-        GPIO.output(li[i], GPIO.HIGH)
-        print(li1[i] + " led on")
-        time.sleep(0.08)
-        GPIO.output(li[i], GPIO.LOW)
+try:
+    for j in range(31001203):
+        for i in range(2):
+            GPIO.output(li[i], GPIO.HIGH)
+            print(li1[i] + " led on")
+            time.sleep(0.08)
+            GPIO.output(li[i], GPIO.LOW)
+finally:
 
-   
-   
-GPIO.cleanup()
+    GPIO.cleanup()

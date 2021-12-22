@@ -2,7 +2,7 @@ import pygame
 
 pygame.init()
 
-pygame.mixer.music.load('jannavi.mp3')
+pygame.mixer.music.load('sample.wav')
 
 while True:
     cmd = input("play : p, pause:pp, unpause:up, stop:s, quit:q >")
@@ -17,4 +17,3 @@ while True:
         break
     else:
         print('incorrect cmd')
-
